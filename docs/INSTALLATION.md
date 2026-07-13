@@ -18,8 +18,9 @@ Copy-Item .env.example .env
 Open `.env` and replace these placeholder values before starting services:
 
 - `POSTGRES_PASSWORD`
-- `WEBUI_SECRET_KEY`
 - `N8N_ENCRYPTION_KEY`
+
+`WEBUI_SECRET_KEY` has a safe local fallback in `docker-compose.yml`, so the stack will start even if you leave it unset. Set it explicitly if you want a persistent Open WebUI secret.
 
 Use long, unique values. The real `.env` file is intentionally ignored by Git.
 
