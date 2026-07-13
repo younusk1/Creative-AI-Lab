@@ -48,12 +48,12 @@ docker compose exec ollama ollama list
 
 ## 4. Open the services
 
-| Service | URL | Notes |
-| --- | --- | --- |
-| Open WebUI | http://localhost:3000 | Create the first local account here. |
-| n8n | http://localhost:5678 | Create the owner account on first launch. |
-| Adminer | http://localhost:8080 | Use server `postgres`, plus values from `.env`. |
-| Ollama API | http://localhost:11434 | Local API endpoint. |
+| Service    | URL                    | Notes                                           |
+| ---------- | ---------------------- | ----------------------------------------------- |
+| Open WebUI | http://localhost:3000  | Create the first local account here.            |
+| n8n        | http://localhost:5679  | Create the owner account on first launch.       |
+| Adminer    | http://localhost:8080  | Use server `postgres`, plus values from `.env`. |
+| Ollama API | http://localhost:11434 | Local API endpoint.                             |
 
 ## Resource-saving commands
 
