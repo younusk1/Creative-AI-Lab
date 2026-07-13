@@ -1,0 +1,38 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Editors and operating systems
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# Local data and generated creative assets
+data/outputs/
+data/private/
+assets/generated/
+assets/private/
+campaigns/**/generated-assets/
+campaigns/**/exports/
+
+# Databases, notebooks, logs, and temporary files
+*.sqlite
+*.db
+*.log
+logs/
+tmp/
+.ipynb_checkpoints/
