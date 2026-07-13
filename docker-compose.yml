@@ -8,7 +8,7 @@ services:
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-creative_ai_lab}
       POSTGRES_USER: ${POSTGRES_USER:-creative_ai}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change-me-local-for-development}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
@@ -81,7 +81,7 @@ services:
       DB_POSTGRESDB_PORT: 5432
       DB_POSTGRESDB_DATABASE: ${POSTGRES_DB:-creative_ai_lab}
       DB_POSTGRESDB_USER: ${POSTGRES_USER:-creative_ai}
-      DB_POSTGRESDB_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      DB_POSTGRESDB_PASSWORD: ${POSTGRES_PASSWORD:-change-me-local-for-development}
       N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY:?Set N8N_ENCRYPTION_KEY in .env}
       N8N_HOST: ${N8N_HOST:-localhost}
       N8N_PORT: 5678
