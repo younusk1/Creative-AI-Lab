@@ -17,10 +17,9 @@ Copy-Item .env.example .env
 
 Open `.env` and replace these placeholder values before starting services:
 
-- `N8N_ENCRYPTION_KEY`
-
 `POSTGRES_PASSWORD` now has a local fallback in `docker-compose.yml`, so the stack will start even if you leave it unset. Set it explicitly if you want a persistent database password.
 `WEBUI_SECRET_KEY` has a safe local fallback in `docker-compose.yml`, so the stack will start even if you leave it unset. Set it explicitly if you want a persistent Open WebUI secret.
+`N8N_ENCRYPTION_KEY` also has a local fallback in `docker-compose.yml`, but set your own value before you store real n8n credentials.
 
 Use long, unique values. The real `.env` file is intentionally ignored by Git.
 
