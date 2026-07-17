@@ -38,16 +38,16 @@ Planned capabilities include:
 
 ## v0.1 stack
 
-| Layer | Tool | Role |
-| --- | --- | --- |
-| Containers | Docker Compose | Repeatable local environment |
-| Local LLM runtime | Ollama | Runs the selected local model |
-| LLM interface | Open WebUI | Local chat and prompt testing |
-| Automation | n8n | Creative workflow orchestration |
-| Database | PostgreSQL | Briefs, prompts, assets, and workflow metadata |
-| Database UI | Adminer | Lightweight development database access |
-| Agent application | Python + LangGraph | Planned creative workflow logic |
-| Optional analytics | Metabase | Start only when reporting is needed |
+| Layer              | Tool               | Role                                           |
+| ------------------ | ------------------ | ---------------------------------------------- |
+| Containers         | Docker Compose     | Repeatable local environment                   |
+| Local LLM runtime  | Ollama             | Runs the selected local model                  |
+| LLM interface      | Open WebUI         | Local chat and prompt testing                  |
+| Automation         | n8n                | Creative workflow orchestration                |
+| Database           | PostgreSQL         | Briefs, prompts, assets, and workflow metadata |
+| Database UI        | Adminer            | Lightweight development database access        |
+| Agent application  | Python + LangGraph | Planned creative workflow logic                |
+| Optional analytics | Metabase           | Start only when reporting is needed            |
 
 The recommended starting model is **Qwen 2.5 3B Instruct** because it offers a practical quality/resource balance for this laptop class. The model is not bundled with the Compose stack; pull it after Ollama starts.
 
@@ -68,12 +68,13 @@ docker compose up -d
 
 Open the local services:
 
-| Service | Address |
-| --- | --- |
-| Open WebUI | http://localhost:3000 |
-| n8n | http://localhost:5678 |
-| Adminer | http://localhost:8080 |
+| Service    | Address                |
+| ---------- | ---------------------- |
+| Open WebUI | http://localhost:3000  |
+| n8n        | http://localhost:5679  |
+| Adminer    | http://localhost:8080  |
 | Ollama API | http://localhost:11434 |
+| PostgreSQL | localhost:5433         |
 
 Pull the model when the Ollama container is healthy:
 
@@ -81,7 +82,7 @@ Pull the model when the Ollama container is healthy:
 docker compose exec ollama ollama pull qwen2.5:3b
 ```
 
-Then add `http://ollama:11434` as the Ollama connection in Open WebUI (the default Compose configuration supplies this automatically for a fresh setup).
+Then add `http://ollama:11434` as the Ollama connection in Open WebUI (the default Compose configuration supplies this automatically for a fresh setup). If you open n8n in a browser, use `http://localhost:5679`.
 
 For setup details, resource-saving tips, and troubleshooting, see [docs/INSTALLATION.md](docs/INSTALLATION.md).
 
