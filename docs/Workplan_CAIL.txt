@@ -1,0 +1,46 @@
+• I’d plan this as an 8-week path to one complete, demonstrable campaign workflow—not a broad “AI platform.” Your biggest advantage is the
+  deliberately small brief → plan → prompts/storyboard → review → campaign-package flow.
+
+  One immediate README fix: it lists n8n at http://localhost:5678, but your Compose configuration publishes it on http://localhost:5679.
+
+   Timing       Milestone                             Deliverables / proof it is complete
+  ━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Week 1       v0.1 platform validation              Pull and test Qwen 2.5 3B in Open WebUI; save 5–10 representative creative prompts and notes
+                                                      on quality, speed, and RAM use; run the Compose checks.
+  ───────────  ────────────────────────────────────  ────────────────────────────────────────────────────────────────────────────────────────────────
+   Week 2       Define the creative brief             A versioned brief template/schema with fields such as audience, objective, brand voice,
+                                                      deliverables, constraints, channels, and references. Include 2–3 example briefs.
+  ───────────  ────────────────────────────────────  ────────────────────────────────────────────────────────────────────────────────────────────────
+   Weeks 3–4    First Python workflow (v0.2)          A small, repeatable workflow that accepts a brief and produces structured campaign concept,
+                                                      messaging pillars, visual direction, and draft prompts. Validate its output structure and add
+                                                      unit tests.
+  ───────────  ────────────────────────────────────  ────────────────────────────────────────────────────────────────────────────────────────────────
+   Week 5       Persistence and traceability          PostgreSQL tables/migrations for briefs, prompt versions, and workflow runs. Each generated
+                                                      output links back to the brief, model, prompt version, and timestamp.
+  ───────────  ────────────────────────────────────  ────────────────────────────────────────────────────────────────────────────────────────────────
+   Week 6       Storyboard + prompt library (v0.3)    Reusable prompt templates for image, video, copy, and presentation work. Generate a storyboard
+                                                      and shot list from an approved concept. Define a simple quality rubric.
+  ───────────  ────────────────────────────────────  ────────────────────────────────────────────────────────────────────────────────────────────────
+   Week 7       First campaign case study             Run one real or fictional brief end-to-end. Store the brief, planning output, prompts,
+                                                      storyboard, review notes, and final package in campaigns/.
+  ───────────  ────────────────────────────────────  ────────────────────────────────────────────────────────────────────────────────────────────────
+   Week 8       Review and automation (v0.4)          Create one n8n handoff: approved brief → workflow run → saved campaign package → review
+                                                      notification/status. Add a human approval checklist.
+
+  Milestone gates matter more than dates:
+
+  - v0.1 complete: You can chat with Qwen locally through Open WebUI and record the result of a prompt experiment.
+  - v0.2 complete: One brief reliably produces a structured planning package and its history is saved.
+  - v0.3 complete: One campaign can be traced from brief to storyboard and reusable prompts.
+  - v0.4 complete: A human can approve a brief and trigger a reviewable, auditable handoff.
+
+  A sensible weekly rhythm:
+
+  - Day 1: choose one narrow deliverable.
+  - Days 2–3: build the smallest working version.
+  - Day 4: add tests, documentation, and an example.
+  - Day 5: run it on a real brief; record what failed and adjust the next week.
+
+  Avoid adding Metabase, more agents, image/video integrations, or model comparisons until the first campaign case study is complete. At this stage,
+  a reliable simple workflow is much more valuable than a larger stack.
+
