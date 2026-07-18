@@ -9,7 +9,7 @@ This is a concise, dated record of implementation lessons, experiments, and next
 **Decisions made:**
 
 - Use Docker Compose for PostgreSQL, Adminer, Ollama, Open WebUI, and n8n.
-- Start with one local model: Qwen 2.5 3B Instruct.
+- Start with one local model: Gemma 2 2B Instruct.
 - Design around creative production stages rather than a collection of autonomous agents.
 - Keep Metabase optional because it adds meaningful memory usage.
 

@@ -37,7 +37,7 @@ The first startup downloads container images and may take several minutes.
 When the Ollama container is running:
 
 ```powershell
-docker compose exec ollama ollama pull qwen2.5:3b
+docker compose exec ollama ollama pull gemma2:2b
 ```
 
 Check that it is available:

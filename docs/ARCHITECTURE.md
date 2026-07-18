@@ -9,7 +9,7 @@ Creative AI Lab is a local-first foundation for creative production workflows. I
 ```mermaid
 flowchart TB
     User[Creator] --> WebUI[Open WebUI]
-    WebUI --> Ollama[Ollama + Qwen 2.5 3B]
+    WebUI --> Ollama[Ollama + Gemma 2 2B]
     User --> N8N[n8n]
     N8N --> Ollama
     N8N --> Postgres[(PostgreSQL)]

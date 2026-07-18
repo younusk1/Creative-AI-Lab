@@ -7,7 +7,7 @@ The roadmap favors completed, demonstrable workflows over adding tools quickly.
 - [x] Define local-first, 16 GB laptop architecture.
 - [x] Add Compose services for PostgreSQL, Adminer, Ollama, Open WebUI, and n8n.
 - [x] Add setup, design, and decision documentation.
-- [ ] Start the stack and pull `qwen2.5:3b`.
+- [ ] Start the stack and pull `gemma2:2b`.
 - [ ] Validate Open WebUI access to Ollama.
 - [ ] Record the first prompt-quality experiment.
 

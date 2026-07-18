@@ -49,7 +49,7 @@ Planned capabilities include:
 | Agent application  | Python + LangGraph | Planned creative workflow logic                |
 | Optional analytics | Metabase           | Start only when reporting is needed            |
 
-The recommended starting model is **Qwen 2.5 3B Instruct** because it offers a practical quality/resource balance for this laptop class. The model is not bundled with the Compose stack; pull it after Ollama starts.
+The recommended starting model is **Gemma 2 2B Instruct** because it offers a practical quality/resource balance for this laptop class. The model is not bundled with the Compose stack; pull it after Ollama starts.
 
 ## Quick start
 
@@ -79,7 +79,7 @@ Open the local services:
 Pull the model when the Ollama container is healthy:
 
 ```powershell
-docker compose exec ollama ollama pull qwen2.5:3b
+docker compose exec ollama ollama pull gemma2:2b
 ```
 
 Then add `http://ollama:11434` as the Ollama connection in Open WebUI (the default Compose configuration supplies this automatically for a fresh setup). If you open n8n in a browser, use `http://localhost:5679`.
@@ -102,7 +102,7 @@ This is an active work in progress. v0.1 establishes the local platform and docu
 - [x] Define local-first architecture and constraints
 - [x] Add core Docker Compose stack
 - [x] Document initial roadmap and decisions
-- [ ] Validate Qwen with Open WebUI
+- [ ] Validate Gemma with Open WebUI
 - [ ] Create the Creative Brief workflow
 - [ ] Add prompt-library persistence
 - [ ] Build the first end-to-end campaign demo

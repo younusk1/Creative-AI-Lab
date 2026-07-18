@@ -5,7 +5,7 @@
 
    Timing       Milestone                             Deliverables / proof it is complete
   ━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   Week 1       v0.1 platform validation              Pull and test Qwen 2.5 3B in Open WebUI; save 5–10 representative creative prompts and notes
+  Week 1       v0.1 platform validation              Pull and test Gemma 2 2B in Open WebUI; save 5–10 representative creative prompts and notes
                                                       on quality, speed, and RAM use; run the Compose checks.
   ───────────  ────────────────────────────────────  ────────────────────────────────────────────────────────────────────────────────────────────────
    Week 2       Define the creative brief             A versioned brief template/schema with fields such as audience, objective, brand voice,
@@ -29,7 +29,7 @@
 
   Milestone gates matter more than dates:
 
-  - v0.1 complete: You can chat with Qwen locally through Open WebUI and record the result of a prompt experiment.
+  - v0.1 complete: You can chat with Gemma locally through Open WebUI and record the result of a prompt experiment.
   - v0.2 complete: One brief reliably produces a structured planning package and its history is saved.
   - v0.3 complete: One campaign can be traced from brief to storyboard and reusable prompts.
   - v0.4 complete: A human can approve a brief and trigger a reviewable, auditable handoff.

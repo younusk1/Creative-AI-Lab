@@ -11,7 +11,7 @@ Creative AI Lab uses focused, reviewable workflows. “Agent” refers to a boun
 | Purpose | Convert a creator's brief into a structured campaign-planning draft. |
 | Inputs | Objective, audience, channel, tone, mandatory messages, constraints. |
 | Outputs | Campaign concept, key message, visual direction, draft deliverables, assumptions, and initial prompts. |
-| Model | Qwen 2.5 3B through Ollama. |
+| Model | Gemma 2 2B through Ollama. |
 | Tools | Prompt template, output schema, optional PostgreSQL persistence. |
 | Human checkpoint | Approve or revise campaign direction before downstream generation. |
 | Failure handling | Return missing-information questions or clearly label assumptions; never invent brand facts. |

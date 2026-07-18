@@ -15,7 +15,7 @@ This log captures significant choices and their trade-offs. New entries should i
 - **Date:** 2026-07-13
 - **Status:** Accepted
 - **Context:** Disk space and 16 GB RAM make a multi-model lab counterproductive at the outset.
-- **Decision:** Start with Qwen 2.5 3B Instruct as the only local model.
+- **Decision:** Start with Gemma 2 2B Instruct as the only local model.
 - **Consequences:** The platform stays responsive enough for iterative work. Output quality will not equal larger models, so human review and structured workflows are important.
 
 ## ADR-003: Prioritize creative workflows over autonomous agents
