@@ -19,7 +19,7 @@ Ensure your local Gemma model is running via an OpenAI-compatible interface like
 
 ```bash
 # Command to initiate the local Gemma model
-ollama run gemma2:2b
+docker compose exec ollama ollama run gemma2:2b
 ```
 
 ## 2. Advanced Workflow: Direct Terminal Piping
@@ -29,23 +29,19 @@ Use Gemini CLI as a context aggregator to filter massive datasets, then stream t
 ```bash
 // Use Gemini to extract authentication helpers from a large repository
 // Then pipe this distilled context directly to Gemma for security optimization
-gemini-cli "Extract only auth-related helper functions" --dir ./my-repo | curl http://localhost:11434/api/generate -d '{
-  "model": "gemma2:2b",
-  "prompt": "Review this context for security vulnerabilities: $(cat)",
-  "stream": false
-}'
+gemini-cli "Extract only auth-related helper functions" --dir ./my-repo | docker compose exec -T ollama sh -lc 'prompt=$(cat); curl http://localhost:11434/api/generate -d "{\"model\":\"gemma2:2b\",\"prompt\":\"Review this context for security vulnerabilities: $prompt\",\"stream\":false}"'
 ```
 
 ## 3. Workflow: Hierarchical Context Compression
 
-For complex analysis, use Gemini CLI to generate a dense, high-utility Markdown summary, which serves as the optimized context for the 3B model.
+For complex analysis, use Gemini CLI to generate a dense, high-utility Markdown summary, which serves as the optimized context for the 2B model.
 
 ```bash
 // Step 1: Generate a compressed summary file using Gemini
 gemini-cli "Analyze logs; output top 5 errors with stack traces" --dir ./logs > gemma_context.md
 
 // Step 2: Feed the generated summary into Gemma via Ollama
-ollama run gemma2:2b "Based on this context: $(cat gemma_context.md), write a patch script."
+docker compose exec ollama ollama run gemma2:2b "Based on this context: $(cat gemma_context.md), write a patch script."
 ```
 
 ## 4. Unified Automation (Bash Alias)
@@ -62,7 +58,7 @@ gemini_to_gemma() {
   local context=$(gemini-cli "$prompt_gemini" --dir .)
 
   // Local Gemma performs the final task based on the provided context
-  ollama run gemma2:2b "$prompt_gemma \n\n Context: $context"
+  docker compose exec ollama ollama run gemma2:2b "$prompt_gemma \n\n Context: $context"
 }
 
 // Usage example:
