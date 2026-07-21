@@ -42,7 +42,7 @@ Planned capabilities include:
 | ------------------ | ------------------ | ---------------------------------------------- |
 | Containers         | Docker Compose     | Repeatable local environment                   |
 | Local LLM runtime  | Ollama             | Runs the selected local model                  |
-| LLM interface      | Open WebUI         | Local chat and prompt testing                  |
+| LLM interface      | Open WebUI*        | Local chat and prompt testing                  |
 | Automation         | n8n                | Creative workflow orchestration                |
 | Database           | PostgreSQL         | Briefs, prompts, assets, and workflow metadata |
 | Database UI        | Adminer            | Lightweight development database access        |
@@ -139,3 +139,5 @@ Directories are added as features need them; v0.1 avoids empty scaffolding.
 ## License
 
 MIT. Add a `LICENSE` file before publishing the repository.
+
+*Due to its resource-intensive nature, Open WebUI has been put on hold
