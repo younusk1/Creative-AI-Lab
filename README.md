@@ -42,7 +42,7 @@ Planned capabilities include:
 | ------------------ | ------------------ | ---------------------------------------------- |
 | Containers         | Docker Compose     | Repeatable local environment                   |
 | Local LLM runtime  | Ollama             | Runs the selected local model                  |
-| LLM interface      | Open WebUI*        | Local chat and prompt testing                  |
+| LLM interface      | Open WebUI\*       | Local chat and prompt testing                  |
 | Automation         | n8n                | Creative workflow orchestration                |
 | Database           | PostgreSQL         | Briefs, prompts, assets, and workflow metadata |
 | Database UI        | Adminer            | Lightweight development database access        |
@@ -119,25 +119,43 @@ This is an active work in progress. v0.1 establishes the local platform and docu
 - [Changelog](docs/CHANGELOG.md)
 - [Learning journal](LEARNING_JOURNAL.md)
 
-## Planned structure
+## Directory structure (v0.1)
 
 ```text
 Creative-AI-Lab/
-├── app/                 # Python workflows, agents, prompts, and integrations
-├── campaigns/           # Complete creative campaign case studies
-├── data/                # Local briefs and non-sensitive reference material
-├── database/            # Schema, migrations, and seed data
-├── docs/                # Project documentation
-├── scripts/             # Setup and operational helpers
-├── tests/               # Automated checks
+├── app/
+│   ├── agents/          # Agent modules and related logic
+│   ├── api/             # API routes, schemas, and middleware
+│   ├── config.py        # Central configuration
+│   ├── models/          # Model adapters (Gemma, Gemini, etc.)
+│   ├── prompts/         # Prompt templates by use case
+│   ├── utils/           # Shared utility helpers
+│   └── workflows/       # Workflow implementations (automation/langgraph/n8n)
+├── assets/              # Brand and generated media assets
+├── campaigns/           # Campaign-specific outputs and artifacts
+├── data/                # Briefs, references, and local datasets
+├── database/            # Database schema, migrations, seed/sample data
+├── docs/                # Architecture, setup, roadmap, and guides
+├── experiments/         # Prompt/model experimentation tracks
+├── prompts/             # Root-level reusable prompt resources
+├── screenshots/         # Architecture/output/UI screenshots
+├── tests/
+│   ├── agents/          # Agent-related tests
+│   ├── prompts/         # Prompt validation tests
+│   ├── services/        # Service-level tests
+│   ├── workflows/       # Workflow tests
+│   ├── test_compose_stack.py
+│   ├── test_config.py
+│   └── test_gemma.py
 ├── docker-compose.yml
+├── requirements.txt
 └── README.md
 ```
 
-Directories are added as features need them; v0.1 avoids empty scaffolding.
+The structure is intentionally modular: app code, campaign assets, data, docs, and tests are separated so router and model work can evolve without reorganizing the whole repository.
 
 ## License
 
 MIT. Add a `LICENSE` file before publishing the repository.
 
-*Due to its resource-intensive nature, Open WebUI has been put on hold
+\*Due to its resource-intensive nature, Open WebUI has been put on hold
