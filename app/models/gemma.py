@@ -17,13 +17,14 @@ from __future__ import annotations
 import subprocess
 
 from app.config import DEFAULT_MODEL, DOCKER_SERVICE, REQUEST_TIMEOUT
+from app.models.base import BaseModel
 
 
 class GemmaError(Exception):
     """Raised when Gemma execution fails."""
 
 
-class Gemma:
+class Gemma(BaseModel):
     """Simple interface for interacting with the local Gemma model."""
 
     def __init__(
